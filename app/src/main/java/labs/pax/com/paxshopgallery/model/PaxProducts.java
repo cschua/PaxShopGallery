@@ -1,8 +1,9 @@
-package labs.pax.com.paxshopgallery;
+package labs.pax.com.paxshopgallery.model;
 
 import com.bluelinelabs.logansquare.annotation.JsonField;
 import com.bluelinelabs.logansquare.annotation.JsonObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,18 +13,18 @@ public class PaxProducts {
     public List<Product> pods = new ArrayList<>();
 
     @JsonObject
-    public static class Product {
-        @JsonField(name="id")
+    public static class Product implements Serializable {
+        @JsonField(name = "id")
         public String id;
-        @JsonField(name="name")
+        @JsonField(name = "name")
         public String name;
-        @JsonField(name="description")
+        @JsonField(name = "description")
         public String description;
-        @JsonField(name="price")
+        @JsonField(name = "price")
         public int price;
-        @JsonField(name="thumbnail_url")
+        @JsonField(name = "thumbnail_url")
         public String thumbnailURL;
-        @JsonField(name="image_url")
+        @JsonField(name = "image_url")
         public String imageURL;
 
         @Override
